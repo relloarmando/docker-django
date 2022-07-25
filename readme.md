@@ -1,15 +1,15 @@
 # Instructions
-## git clone 
+### git clone https://github.com/relloarmando/docker-django.git
 
 ## Fow Windows 10 or 11
 ### install wsl VERSION 2, then proceed to install Linux distro (1) "This was tested on Ubuntu"
 
-## Command to check your current version of wsl 
+### Command to check your current version of wsl 
 ``` console
  wsl -l -v
  ```
 
-## Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2)
+### Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2)
 
 ### cd to repo directory
 ``` console
