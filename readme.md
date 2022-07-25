@@ -26,7 +26,10 @@ docker-compose run web django-admin startproject composeexample .
 docker-compose up
  ```
  ![image](https://user-images.githubusercontent.com/92693998/180700775-a99e6475-8cf5-4d69-8a59-4dad06549e72.png)
- ### When the services dicker-django-db and docker-django-web are up, visit http://127.0.0.1:8000/first-app/my-first-page
+ ### When the services docker-django-db and docker-django-web are up,
+ visit http://127.0.0.1:8000/first-app/my-first-page
+ ![image](https://user-images.githubusercontent.com/92693998/180701300-7f02472c-2916-4456-b832-28952f71d529.png)
+
  
  
 ## Sources 
