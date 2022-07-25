@@ -2,7 +2,7 @@
 ### git clone https://github.com/relloarmando/docker-django.git
 
 ## For Windows 10 or 11
-### install wsl VERSION 2, then proceed to install Linux distro (1) "This was tested on Windows 11 an wsl-2 Ubuntu"
+### install wsl VERSION 2, then proceed to install Linux distro (1) "This was tested on Windows 11 and wsl-2 Ubuntu"
 
 ### Command to check your current version of wsl 
 ``` console
