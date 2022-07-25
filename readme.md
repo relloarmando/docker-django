@@ -2,26 +2,29 @@
 ### git clone https://github.com/relloarmando/docker-django.git
 
 ## For Windows 10 or 11:
-### install wsl VERSION 2, then proceed to install Linux distro (1) "This was tested on Windows 11 and wsl-2 Ubuntu"
+install wsl VERSION 2, then proceed to install Linux distro (1) 
+_This was tested on Windows 11 and wsl-2 Ubuntu_
 
-### Command to check your current version of wsl 
+Command to check your current version of wsl 
 ``` console
  wsl -l -v
  ```
 
-### Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2)
+Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2)
 
-### cd to directory
+cd to directory
 ``` console
  cd docker-django
  ```
 
-### Create the Django project by running the docker compose run command as follows (3)
+Create the Django project by running the docker compose run command as follows (3)
 ``` console
 docker-compose run web django-admin startproject composeexample .
  ```
+ ![image](https://user-images.githubusercontent.com/92693998/180701921-40be16f1-80ef-414f-87f5-ade33ec73d54.png)
+
  
- ### After the image finished building, start the project
+After the image has finished building, start the project
 ``` console
 docker-compose up
  ```
@@ -30,6 +33,7 @@ docker-compose up
  visit http://127.0.0.1:8000/first-app/my-first-page
  ![image](https://user-images.githubusercontent.com/92693998/180701300-7f02472c-2916-4456-b832-28952f71d529.png)
 
+### Congratulations !! You have deployed a django server and a postgres database
  
  
 ## Sources 
