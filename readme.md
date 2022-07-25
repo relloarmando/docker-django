@@ -7,7 +7,7 @@
  ```
 ## if you have windows 11 probably have or can install wsl VERSION 2, proceed to install Linux distro (1) "This was tested on Ubuntu"
 
-## Once you have wsl-linux distro installed install docker desktop for windows (2)
+## Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2)
 
 ## Sources 
 ### *1 https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers 
