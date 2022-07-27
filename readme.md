@@ -2,7 +2,7 @@
 ### git clone https://github.com/relloarmando/docker-django.git
 
 ## For Windows 10 or 11:
-Install prerequisites ([ref. 1](https://github.com/relloarmando/docker-django/edit/main/readme.md#1-httpsdocsmicrosoftcomen-uswindowswsltutorialswsl-containersprerequisites)) : 
+Install prerequisites ([ref. 1](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#prerequisites)) : 
 * Wsl Version 2
 * Install Linux distro 
 * Windows Terminal
@@ -14,7 +14,7 @@ To be sure, check your current version of wsl
  ```
 
 Once you have wsl-2 and a linux distro, 
-* download and install docker desktop for windows ([ref. 2](https://github.com/relloarmando/docker-django/edit/main/readme.md#1-httpsdocsmicrosoftcomen-uswindowswsltutorialswsl-containersprerequisites)), then open Docker-Desktop
+* download and install docker desktop for windows ([ref. 2](https://docs.docker.com/desktop/windows/wsl/)), then open Docker-Desktop
 ![image](https://user-images.githubusercontent.com/92693998/181148879-87dbb44d-7374-4ec4-99b7-7caa2e14825c.png)
 
 
@@ -23,7 +23,7 @@ In a windows terminal cd to directory
  cd docker-django
  ```
 
-Create the Django project ([ref. 3](https://github.com/relloarmando/docker-django/edit/main/readme.md#1-httpsdocsmicrosoftcomen-uswindowswsltutorialswsl-containersprerequisites)) by running the command as follows: 
+Create the Django project ([ref. 3](https://docs.docker.com/samples/django/)) by running the command as follows: 
 ``` console
 docker-compose run web django-admin startproject composeexample .
  ```
