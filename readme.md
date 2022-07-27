@@ -1,5 +1,7 @@
 # Instructions
-### git clone https://github.com/relloarmando/docker-django.git
+``` console
+git clone https://github.com/relloarmando/docker-django.git
+ ```
 
 ## For Windows 10 or 11:
 Install prerequisites ([ref. 1](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#prerequisites)) : 
