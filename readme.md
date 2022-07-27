@@ -42,7 +42,7 @@ docker-compose up
  
  
 ## Sources 
-### *1 https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#prerequisites
-### *2 https://docs.docker.com/desktop/windows/wsl/
-### *3 https://docs.docker.com/samples/django/
-### *4 https://www.w3schools.com/django/django_templates.php
+ 1. https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#prerequisites
+ 2. https://docs.docker.com/desktop/windows/wsl/
+ 3. https://docs.docker.com/samples/django/
+ 4. https://www.w3schools.com/django/django_templates.php
