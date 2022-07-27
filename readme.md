@@ -12,9 +12,8 @@ To be sure, check your current version of wsl
 ``` console
  wsl -l -v
  ```
-
-Once you have wsl-2 and a linux distro, 
-* download and install docker desktop for windows ([ref. 2](https://docs.docker.com/desktop/windows/wsl/)), then open Docker-Desktop
+ 
+* Download and install docker desktop for windows ([ref. 2](https://docs.docker.com/desktop/windows/wsl/)), then open Docker-Desktop
 ![image](https://user-images.githubusercontent.com/92693998/181148879-87dbb44d-7374-4ec4-99b7-7caa2e14825c.png)
 
 
