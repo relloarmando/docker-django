@@ -5,14 +5,16 @@
 install wsl VERSION 2, then proceed to install Linux distro (1) 
 _This was tested on Windows 11 and wsl-2 Ubuntu_
 
-Command to check your current version of wsl 
+windows terminal command to check your current version of wsl 
 ``` console
  wsl -l -v
  ```
 
-Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2)
+Once you have wsl-2 and a linux distro, download and install docker desktop for windows (2), then open Docker-Desktop
+![image](https://user-images.githubusercontent.com/92693998/181148879-87dbb44d-7374-4ec4-99b7-7caa2e14825c.png)
 
-cd to directory
+
+in a windows terminal cd to directory
 ``` console
  cd docker-django
  ```
