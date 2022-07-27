@@ -14,7 +14,8 @@ To be sure, check your current version of wsl
 ``` console
  wsl -l -v
  ```
- 
+ ![image](https://user-images.githubusercontent.com/92693998/181155296-55091b73-fa36-41da-8d68-cb6c0d9b3219.png)
+
 * Download and install docker desktop for windows ([ref. 2](https://docs.docker.com/desktop/windows/wsl/)), then open Docker-Desktop
 ![image](https://user-images.githubusercontent.com/92693998/181148879-87dbb44d-7374-4ec4-99b7-7caa2e14825c.png)
 
