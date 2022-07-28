@@ -38,9 +38,6 @@ python manage.py createsuperuser
 exit
  ```
 
- Login http://127.0.0.1:8000/admin
- ![django_admin_celery](https://user-images.githubusercontent.com/92693998/181426174-a911b845-04c9-4d0c-99f6-84cbaf522551.png)
-
 You'll need 2 terminal to start Celery Tasks
 
 Worker:
@@ -51,10 +48,15 @@ celery -A composeexample worker --pool=solo --loglevel=info
 
 Beat:
 ``` console
-celery -A composeexample beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+celery -A composeexample beat -l info
 ```
 ![image](https://user-images.githubusercontent.com/92693998/181430439-768ad81c-aa22-456b-a59e-8fb73b819381.png)
 
+Login to Django Admin with your superuser credentials
+
+![image](https://user-images.githubusercontent.com/92693998/181433172-ab6c0498-3043-469c-97ce-d4fdeecccabf.png)
+
+From this panel you can view, edit and create Celery tasks
  
 ## Sources 
  1. https://django-celery-beat.readthedocs.io/en/latest/
