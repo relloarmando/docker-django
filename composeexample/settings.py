@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'composeexample.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': '',
+        'PASSWORD': 'rhZj6JZk05SyTGpGI1bk',
+        'HOST': 'containers-us-west-42.railway.app',
+        'PORT': '6737',
     }
 }
 
@@ -140,10 +140,3 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# Celery Configuration Options
-CELERY_TIMEZONE = "America/Los_Angeles"
-CELERY_TASK_TRACK_STARTED = True
-CELERY_TASK_TIME_LIMIT = 30 * 60
-BROKER_URL = 'django://'
-CELERY_IMPORTS = ('celery_app.tasks',)

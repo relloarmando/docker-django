@@ -1,7 +1,5 @@
-# Create your tasks here
-
 from celery import shared_task
-
+import json
 
 @shared_task
 def add(x, y):
@@ -14,6 +12,5 @@ def mul(x, y):
 
 
 @shared_task
-def xsum(numbers):
-    return sum(numbers)
-
+def print_task(message):
+    print(f'This is a Celery Task: {message}')
