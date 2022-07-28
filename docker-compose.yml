@@ -35,5 +35,3 @@ services:
     ports:
       # AMQP protocol port
       - '5672:5672'
-    depends_on:
-      - web

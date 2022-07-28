@@ -7,7 +7,7 @@ from celery import Celery
 # Set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'composeexample.settings')
 
-app = Celery('docker-django')
+app = Celery('composeexample')
 
 # Using a string here means the worker doesn't have to serialize
 # the configuration object to child processes.
@@ -23,7 +23,13 @@ app.conf.beat_schedule = {
         'schedule': 10.0,
         'args': (5, 6)
     },
+    'mul-every-10-seconds': {
+        'task': 'celery_app.tasks.mul',
+        'schedule': 10.0,
+        'args': (5, 6)
+    },
 }
+
 
 app.conf.timezone = 'UTC'
 # Load task modules from all registered Django apps.
