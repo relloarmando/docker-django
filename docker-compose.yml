@@ -9,6 +9,9 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -22,3 +25,15 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+
+  rabbitmq3:
+    container_name: "rabbitmq"
+    image: rabbitmq:3.10-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+    depends_on:
+      - web
