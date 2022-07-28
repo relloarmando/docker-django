@@ -3,6 +3,8 @@
 .cache
 .idea
 db*.json
-data/db/pg_mem
-data/db/pg_logical
+/data/
 /venv/
+/celerybeat-schedule.*
+*.pyc
+data/db/base/1/112
