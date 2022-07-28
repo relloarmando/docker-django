@@ -53,8 +53,10 @@ celery -A composeexample beat -l info --scheduler django_celery_beat.schedulers:
 ![image](https://user-images.githubusercontent.com/92693998/181430439-768ad81c-aa22-456b-a59e-8fb73b819381.png)
 
 Login to Django Admin with your superuser credentials
+
 ![image](https://user-images.githubusercontent.com/92693998/181433172-ab6c0498-3043-469c-97ce-d4fdeecccabf.png)
 
+From this panel you can view, edit and create Celery tasks
  
 ## Sources 
  1. https://django-celery-beat.readthedocs.io/en/latest/
