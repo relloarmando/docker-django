@@ -48,7 +48,7 @@ celery -A composeexample worker --pool=solo --loglevel=info
 
 Beat:
 ``` console
-celery -A composeexample beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+celery -A composeexample beat -l info
 ```
 ![image](https://user-images.githubusercontent.com/92693998/181430439-768ad81c-aa22-456b-a59e-8fb73b819381.png)
 
