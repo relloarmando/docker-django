@@ -1,51 +1,48 @@
-# Instructions
+# Instructions for Celery Periodic Tasks
 ``` console
 git clone https://github.com/relloarmando/docker-django.git
  ```
-
-## For Windows 10 or 11:
-Install prerequisites ([ref. 1](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#prerequisites)) : 
-* Wsl Version 2
-* Install Linux distro 
-* Windows Terminal
-_This was tested on Windows 11 and wsl-2 Ubuntu_
-
-To be sure, check your current version of wsl 
-``` console
- wsl -l -v
- ```
- ![image](https://user-images.githubusercontent.com/92693998/181155296-55091b73-fa36-41da-8d68-cb6c0d9b3219.png)
-
-* Download and install docker desktop for windows ([ref. 2](https://docs.docker.com/desktop/windows/wsl/)), then open Docker-Desktop
-![image](https://user-images.githubusercontent.com/92693998/181148879-87dbb44d-7374-4ec4-99b7-7caa2e14825c.png)
-
 
 In a windows terminal cd to directory
 ``` console
  cd docker-django
  ```
-
-Create the Django project ([ref. 3](https://docs.docker.com/samples/django/)) by running the command as follows: 
-``` console
-docker-compose run web django-admin startproject composeexample .
- ```
- ![image](https://user-images.githubusercontent.com/92693998/180701921-40be16f1-80ef-414f-87f5-ade33ec73d54.png)
-
  
-After the image has finished building, start the project:
+Start the containers with the following command:
 ``` console
 docker-compose up
  ```
- ![image](https://user-images.githubusercontent.com/92693998/180700775-a99e6475-8cf5-4d69-8a59-4dad06549e72.png)
- ### When the services docker-django-db and docker-django-web are up,
- visit http://127.0.0.1:8000/first-app/my-first-page
- ![image](https://user-images.githubusercontent.com/92693998/180701300-7f02472c-2916-4456-b832-28952f71d529.png)
+![docker-django-compose-up](https://user-images.githubusercontent.com/92693998/181424343-b1f43a2b-4121-46d2-aa3f-ba6badb0ecf6.png)
 
-### Congratulations !! You have deployed a django server and a postgres database
+When the services are up, enter the container to run commands:
+``` console
+docker ps
+ ```
+
+``` console
+docker exec -it [container-name-or-id] bash
+ ```
+ ![image](https://user-images.githubusercontent.com/92693998/181424915-f801dc59-5b1e-42e2-94db-c9a251f293d7.png)
+
+``` console
+python manage.py migrate
+ ```
+ ![makemigrations](https://user-images.githubusercontent.com/92693998/181426114-3a527cc2-b205-44d3-b44d-5d6e5c9c1fc3.png)
+
+Create a superuser to login in django admin
+``` console
+python manage.py createsuperuser
+ ```
+
+ Login http://127.0.0.1:8000/admin
+ ![django_admin_celery](https://user-images.githubusercontent.com/92693998/181426174-a911b845-04c9-4d0c-99f6-84cbaf522551.png)
+
+
+
  
  
 ## Sources 
- 1. https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#prerequisites
- 2. https://docs.docker.com/desktop/windows/wsl/
- 3. https://docs.docker.com/samples/django/
- 4. https://www.w3schools.com/django/django_templates.php
+ 1. https://django-celery-beat.readthedocs.io/en/latest/
+ 2. https://www.youtube.com/watch?v=fBfzE0yk97k
+ 3. https://stackoverflow.com/questions/67001563/no-errors-but-celery-task-not-sending-email-as-expected
+ 
