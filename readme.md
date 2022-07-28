@@ -1,6 +1,6 @@
 # Instructions for Celery Periodic Tasks
 ``` console
-git clone https://github.com/relloarmando/docker-django.git
+git clone https://github.com/relloarmando/docker-django.git --branch celery_tasks
  ```
 
 In a windows terminal cd to directory
@@ -22,24 +22,39 @@ docker ps
 ``` console
 docker exec -it [container-name-or-id] bash
  ```
- ![image](https://user-images.githubusercontent.com/92693998/181424915-f801dc59-5b1e-42e2-94db-c9a251f293d7.png)
+ ![docker_exec](https://user-images.githubusercontent.com/92693998/181424915-f801dc59-5b1e-42e2-94db-c9a251f293d7.png)
 
 ``` console
 python manage.py migrate
  ```
- ![makemigrations](https://user-images.githubusercontent.com/92693998/181426114-3a527cc2-b205-44d3-b44d-5d6e5c9c1fc3.png)
+ 
+![migrations](https://user-images.githubusercontent.com/92693998/181427487-9463d5ab-893d-4a32-9d9e-465c3011ce22.png)
 
-Create a superuser to login in django admin
+
+Create a superuser to login in django admin, then exit the terminal
 ``` console
 python manage.py createsuperuser
+
+exit
  ```
 
  Login http://127.0.0.1:8000/admin
  ![django_admin_celery](https://user-images.githubusercontent.com/92693998/181426174-a911b845-04c9-4d0c-99f6-84cbaf522551.png)
 
+You'll need 2 terminal to start Celery Tasks
 
+Worker:
+``` console
+celery -A composeexample worker --pool=solo --loglevel=info
+ ```
+![image](https://user-images.githubusercontent.com/92693998/181430485-f731358b-83ab-4d8f-a93f-5b0c600b40f9.png)
 
- 
+Beat:
+``` console
+celery -A composeexample beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+```
+![image](https://user-images.githubusercontent.com/92693998/181430439-768ad81c-aa22-456b-a59e-8fb73b819381.png)
+
  
 ## Sources 
  1. https://django-celery-beat.readthedocs.io/en/latest/
