@@ -5,4 +5,3 @@
 db*.json
 data/db/pg_mem
 data/db/pg_logical
-/venv/
