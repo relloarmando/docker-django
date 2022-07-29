@@ -45,7 +45,7 @@ python manage.py createsuperuser
 exit
  ```
 
-You'll need 2 terminals to start a worker and beat in docker-django-web.
+You'll need to start 2 terminals for the worker and beat in the container docker-django-web.
 To get the CONTANER ID
 ``` console
 docker ps
@@ -65,15 +65,20 @@ docker exec -it [CONTAINER ID] celery -A composeexample beat -l info --scheduler
 ```
 ![image](https://user-images.githubusercontent.com/92693998/181682649-07e11d48-2258-4f52-9d5d-6e6a1b28cf87.png)
 
-# How to shckedule periodic tasks with 
-Login to Django Admin with your superuser credentials
+# How to schedule periodic tasks with Django and Celery 
+Here is showed 2 ways of scheduling periodic task in django-celery
+1. Write beat_schedule dictionary in composeexample/celery.py
+![image](https://user-images.githubusercontent.com/92693998/181691288-00497b2b-2ce8-42a8-9ada-a0eed5c04c7a.png)
 
-![image](https://user-images.githubusercontent.com/92693998/181433172-ab6c0498-3043-469c-97ce-d4fdeecccabf.png)
-
+2. Login to Django Admin with your previously superuser credentials
 From this panel you can view, edit and create Celery tasks
+![image](https://user-images.githubusercontent.com/92693998/181691804-b16f867c-68d0-4f81-b5e1-f4c9d8d6b387.png)
+![image](https://user-images.githubusercontent.com/92693998/181692028-0a2e64bf-03e6-4f2c-ba1c-34d1ad7da19f.png)
+
+
  
 ## Sources 
  1. https://django-celery-beat.readthedocs.io/en/latest/
- 2. https://www.youtube.com/watch?v=fBfzE0yk97k
+ 2. [Learn Django Celery with RabbitMQ - Install and create new celery instance](https://www.youtube.com/watch?v=fBfzE0yk97k)
  3. https://stackoverflow.com/questions/67001563/no-errors-but-celery-task-not-sending-email-as-expected
  
