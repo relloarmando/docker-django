@@ -15,17 +15,19 @@ In a windows terminal cd to directory
  cd docker-django
  ```
  
-Start the containers with the following command:
+Build and start the containers with the following command:
 ``` console
 docker-compose up
  ```
 ![docker-django-compose-up](https://user-images.githubusercontent.com/92693998/181424343-b1f43a2b-4121-46d2-aa3f-ba6badb0ecf6.png)
 
-When the services are up, enter the container to run commands:
+When the services are up, get the container id:
 ``` console
 docker ps
- ```
+```
+![image](https://user-images.githubusercontent.com/92693998/181682399-04b91fba-e724-4e0f-8419-05dd25ac4c4e.png)
 
+And execute commands in container docker-django-web
 ``` console
 docker exec -it [container-name-or-id] bash
  ```
@@ -45,8 +47,8 @@ python manage.py createsuperuser
 exit
  ```
 
-You'll need to start 2 terminals for the worker and beat in the container docker-django-web.
-To get the CONTANER ID
+You'll need to start 2 terminals for worker and beat in the container docker-django-web.
+Get the CONTANER ID and then
 ``` console
 docker ps
 ```
@@ -66,7 +68,8 @@ docker exec -it [CONTAINER ID] celery -A composeexample beat -l info --scheduler
 ![image](https://user-images.githubusercontent.com/92693998/181682649-07e11d48-2258-4f52-9d5d-6e6a1b28cf87.png)
 
 # How to schedule periodic tasks with Django and Celery 
-Here is showed 2 ways of scheduling periodic task in django-celery
+Here I show 2 ways of scheduling periodic task in django-celery
+
 1. Write beat_schedule dictionary in composeexample/celery.py
 ![image](https://user-images.githubusercontent.com/92693998/181691288-00497b2b-2ce8-42a8-9ada-a0eed5c04c7a.png)
 
@@ -76,7 +79,6 @@ From this panel you can view, edit and create Celery tasks
 ![image](https://user-images.githubusercontent.com/92693998/181692028-0a2e64bf-03e6-4f2c-ba1c-34d1ad7da19f.png)
 
 
- 
 ## Sources 
  1. https://django-celery-beat.readthedocs.io/en/latest/
  2. [Learn Django Celery with RabbitMQ - Install and create new celery instance](https://www.youtube.com/watch?v=fBfzE0yk97k)
