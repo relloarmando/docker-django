@@ -40,7 +40,7 @@ docker ps
 
 Execute commands in container docker-django-web
 ``` console
-docker exec -it [container-name-or-id] bash
+docker exec -it [container-id] bash
  ```
  ![docker_exec](https://user-images.githubusercontent.com/92693998/181424915-f801dc59-5b1e-42e2-94db-c9a251f293d7.png)
 
@@ -51,14 +51,14 @@ python manage.py migrate
 ![migrations](https://user-images.githubusercontent.com/92693998/181427487-9463d5ab-893d-4a32-9d9e-465c3011ce22.png)
 
 
-Create a superuser to login in django admin, then exit the terminal
+Create a superuser to later login in django admin, then exit the terminal
 ``` console
 python manage.py createsuperuser
 
 exit
  ```
 
-You'll need to start terminals for worker and beat in the container docker-django-web.
+You'll need to start 2 terminals for worker and beat in the container docker-django-web.
 Get the CONTANER ID and then
 ``` console
 docker ps
