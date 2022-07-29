@@ -19,13 +19,8 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.timezone = 'UTC'
 
 app.conf.beat_schedule = {
-    'add-every-10-seconds': {
+    'celery.py_add-every-5-seconds': {
         'task': 'celery_app.tasks.add',
-        'schedule': 10.0,
-        'args': (5, 6)
-    },
-    'mul-every-10-seconds': {
-        'task': 'celery_app.tasks.mul',
         'schedule': 10.0,
         'args': (5, 6)
     },
