@@ -1,3 +1,10 @@
+# Why use Celey tasks with Django
+Sending an email, processing a file, or processing heavy computations will keep our execution and the user waiting for the task to complete. Celery, in combination with Django, solves the problem of the model request-response not being asynchronous and you can also gives you the functionality to create recurring tasks with celery and django. Celery is a simple, flexible, and reliable distributed system to process vast amounts of messages, while providing operations with the tools required to maintain such a system. It’s a task queue with focus on real-time processing, while also supporting task scheduling.
+
+![image](https://user-images.githubusercontent.com/92693998/181683394-ee40b718-0841-4ca5-9f56-c8db75c4552e.png)
+_https://coffeebytes.dev/celery-y-django-para-ejecutar-tareas-asincronas/_
+
+
 # Instructions for Celery Periodic Tasks
 ``` console
 git clone https://github.com/relloarmando/docker-django.git --branch celery_tasks
@@ -38,20 +45,27 @@ python manage.py createsuperuser
 exit
  ```
 
-You'll need 2 terminal to start Celery Tasks
+You'll need 2 terminals to start a worker and beat in docker-django-web.
+To get the CONTANER ID
+``` console
+docker ps
+```
+![image](https://user-images.githubusercontent.com/92693998/181682399-04b91fba-e724-4e0f-8419-05dd25ac4c4e.png)
 
 Worker:
 ``` console
-celery -A composeexample worker --pool=solo --loglevel=info
+docker exec [CONTAINER ID] celery -A composeexample worker --pool=solo --loglevel=info
  ```
-![image](https://user-images.githubusercontent.com/92693998/181430485-f731358b-83ab-4d8f-a93f-5b0c600b40f9.png)
+![image](https://user-images.githubusercontent.com/92693998/181682534-9dbe848b-8226-456a-9c27-64d26dc59166.png)
+
 
 Beat:
 ``` console
-celery -A composeexample beat -l info
+docker exec -it [CONTAINER ID] celery -A composeexample beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 ```
-![image](https://user-images.githubusercontent.com/92693998/181430439-768ad81c-aa22-456b-a59e-8fb73b819381.png)
+![image](https://user-images.githubusercontent.com/92693998/181682649-07e11d48-2258-4f52-9d5d-6e6a1b28cf87.png)
 
+# How to shckedule periodic tasks with 
 Login to Django Admin with your superuser credentials
 
 ![image](https://user-images.githubusercontent.com/92693998/181433172-ab6c0498-3043-469c-97ce-d4fdeecccabf.png)
