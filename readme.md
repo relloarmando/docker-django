@@ -1,4 +1,4 @@
-# Why use Celey tasks with Django
+# Why use Celery tasks with Django
 Sending an email, processing a file, or processing heavy computations will keep our execution and the user waiting for the task to complete. Celery, in combination with Django, solves the problem of the model request-response not being asynchronous and you can also gives you the functionality to create recurring tasks with celery and django. Celery is a simple, flexible, and reliable distributed system to process vast amounts of messages, while providing operations with the tools required to maintain such a system. It’s a task queue with focus on real-time processing, while also supporting task scheduling.
 
 ![image](https://user-images.githubusercontent.com/92693998/181683394-ee40b718-0841-4ca5-9f56-c8db75c4552e.png)
