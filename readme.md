@@ -42,7 +42,6 @@ Execute commands in container docker-django-web
 ``` console
 docker exec -it [container-id] bash
  ```
- ![docker_exec](https://user-images.githubusercontent.com/92693998/181424915-f801dc59-5b1e-42e2-94db-c9a251f293d7.png)
 
 ``` console
 python manage.py migrate
