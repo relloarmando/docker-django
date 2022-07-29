@@ -4,13 +4,24 @@ Sending an email, processing a file, or processing heavy computations will keep 
 ![image](https://user-images.githubusercontent.com/92693998/181683394-ee40b718-0841-4ca5-9f56-c8db75c4552e.png)
 _https://coffeebytes.dev/celery-y-django-para-ejecutar-tareas-asincronas/_
 
+# Pre-requisites
+For Windows 10 or 11 
+- Ubuntu WSL 2 (as tested in this guide)
+- Docker Desktop
+- Docker Desktop running
 
-# Instructions for Celery Periodic Tasks
+For Linux
+- Docker
+- Docker-compose
+
+
+# Instructions:
+Clone the repository
 ``` console
 git clone https://github.com/relloarmando/docker-django.git --branch celery_tasks
  ```
 
-In a windows terminal cd to directory
+cd to directory
 ``` console
  cd docker-django
  ```
@@ -27,7 +38,7 @@ docker ps
 ```
 ![image](https://user-images.githubusercontent.com/92693998/181682399-04b91fba-e724-4e0f-8419-05dd25ac4c4e.png)
 
-And execute commands in container docker-django-web
+Execute commands in container docker-django-web
 ``` console
 docker exec -it [container-name-or-id] bash
  ```
@@ -47,7 +58,7 @@ python manage.py createsuperuser
 exit
  ```
 
-You'll need to start 2 terminals for worker and beat in the container docker-django-web.
+You'll need to start terminals for worker and beat in the container docker-django-web.
 Get the CONTANER ID and then
 ``` console
 docker ps
