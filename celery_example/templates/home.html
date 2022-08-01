@@ -1,0 +1,23 @@
+{% load render_table from django_tables2 %}
+{% include 'bootstrap.html' %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Django Celery Beat Programmed Tasks </h1>
+<p>Review the programming of Tasks</p>
+
+{% render_table object_list %}
+
+<div class="btn-group" role="group" aria-label="Basic example">
+ <a href="admin/" >
+      <button type="button" class="btn btn-info">Django Admin</button>
+   </a>
+ <a href="periodic_task_new/" >
+      <button type="button" class="btn btn-info">+ Periodic Task</button>
+   </a>
+
+</div>
+
+</body>
+</html>

@@ -19,12 +19,13 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.timezone = 'UTC'
 
 app.conf.beat_schedule = {
-    'celery.py_add-every-5-seconds': {
-        'task': 'celery_app.tasks.add',
+    'celery.py_message': {
+        'task': 'composeexample.tasks.celery_message',
         'schedule': 10.0,
-        'args': (5, 6)
+        'args': (['Programmed from celery.py'])
     },
 }
+
 
 @app.task(bind=True)
 def debug_task(self):
