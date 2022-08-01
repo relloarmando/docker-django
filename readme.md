@@ -28,6 +28,7 @@ cd to directory
  
 Build and start the containers with the following command:
 ``` console
+docker-compose build
 docker-compose up
  ```
 ![docker-django-compose-up](https://user-images.githubusercontent.com/92693998/181424343-b1f43a2b-4121-46d2-aa3f-ba6badb0ecf6.png)
@@ -78,7 +79,7 @@ docker exec -it [CONTAINER ID] celery -A composeexample beat -l info --scheduler
 ![image](https://user-images.githubusercontent.com/92693998/181682649-07e11d48-2258-4f52-9d5d-6e6a1b28cf87.png)
 
 # How to schedule periodic tasks with Django and Celery 
-Here I show 2 ways of scheduling periodic task in django-celery
+Here I show 3 ways of scheduling periodic task in django-celery
 
 1. Write beat_schedule dictionary in composeexample/celery.py
 ![image](https://user-images.githubusercontent.com/92693998/181691288-00497b2b-2ce8-42a8-9ada-a0eed5c04c7a.png)
@@ -87,6 +88,9 @@ Here I show 2 ways of scheduling periodic task in django-celery
 From this panel you can view, edit and create Celery tasks
 ![image](https://user-images.githubusercontent.com/92693998/181691804-b16f867c-68d0-4f81-b5e1-f4c9d8d6b387.png)
 ![image](https://user-images.githubusercontent.com/92693998/181692028-0a2e64bf-03e6-4f2c-ba1c-34d1ad7da19f.png)
+
+3. Thru the landing page 127.0.0.1, + Periodic Task
+![image](https://user-images.githubusercontent.com/92693998/182083747-659966d9-79b5-40b6-b35c-9c38cbb76b46.png)
 
 
 ## Sources 
