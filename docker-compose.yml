@@ -27,9 +27,8 @@ services:
     depends_on:
       - db
 
-
   rabbitmq3:
-    container_name: "rabbitmq"
+    container_name: "rabbitmq3"
     image: rabbitmq:3.10-alpine
     environment:
       - RABBITMQ_DEFAULT_USER=guest
