@@ -51,32 +51,24 @@ python manage.py migrate
 ![migrations](https://user-images.githubusercontent.com/92693998/181427487-9463d5ab-893d-4a32-9d9e-465c3011ce22.png)
 
 
-Create a superuser to later login in django admin, then exit the terminal
+If you want to create tasks thru Django-Admin, Create a superuser to later login in django admin, then exit the terminal
 ``` console
 python manage.py createsuperuser
 
 exit
  ```
 
-You'll need to start 2 terminals for worker and beat in the container docker-django-web.
-Get the CONTANER ID and then
-``` console
-docker ps
-```
-![image](https://user-images.githubusercontent.com/92693998/181682399-04b91fba-e724-4e0f-8419-05dd25ac4c4e.png)
+The following 2 commands are executed in entry_script.sh to start the worker and beat in the container. (No need to do anything)
 
 Worker:
 ``` console
 docker exec [CONTAINER ID] celery -A composeexample worker --pool=solo --loglevel=info
  ```
-![image](https://user-images.githubusercontent.com/92693998/181682534-9dbe848b-8226-456a-9c27-64d26dc59166.png)
-
 
 Beat:
 ``` console
 docker exec -it [CONTAINER ID] celery -A composeexample beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 ```
-![image](https://user-images.githubusercontent.com/92693998/181682649-07e11d48-2258-4f52-9d5d-6e6a1b28cf87.png)
 
 # How to schedule periodic tasks with Django and Celery 
 Here I show 3 ways of scheduling periodic task in django-celery
