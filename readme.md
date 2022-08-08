@@ -58,7 +58,7 @@ python manage.py createsuperuser
 exit
  ```
 
-The following 2 commands are executed in entry_script.sh to start the worker and beat in the container. (No need to do anything)
+The following 2 commands are executed in entry_script.sh to start Worker and Beat in the container. (No need to do anything)
 
 Worker:
 ``` console
