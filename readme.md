@@ -31,35 +31,32 @@ Build and start the containers with the following command:
 docker-compose build
 docker-compose up
  ```
+ 
 ![docker-django-compose-up](https://user-images.githubusercontent.com/92693998/181424343-b1f43a2b-4121-46d2-aa3f-ba6badb0ecf6.png)
 
-When the services are up, get the container id:
+
+If you want to create tasks thru Django-Admin, Create a superuser to later login in django admin, then exit the terminal
+
 ``` console
 docker ps
 ```
 ![image](https://user-images.githubusercontent.com/92693998/181682399-04b91fba-e724-4e0f-8419-05dd25ac4c4e.png)
 
-Execute commands in container docker-django-web
 ``` console
 docker exec -it [container-id] bash
- ```
-
-``` console
-python manage.py migrate
- ```
- 
-![migrations](https://user-images.githubusercontent.com/92693998/181427487-9463d5ab-893d-4a32-9d9e-465c3011ce22.png)
-
-
-If you want to create tasks thru Django-Admin, Create a superuser to later login in django admin, then exit the terminal
-``` console
 python manage.py createsuperuser
 
 exit
  ```
 
-The following 2 commands are executed in entry_script.sh to start Worker and Beat in the container. (No need to do anything)
+The following commands are executed in entry_script.sh to start Worker and Beat in the container. (No need to do anything)
 
+Django Database Migrations:
+``` console
+python manage.py makemigrations
+python manage.py migrate
+ ```
+ 
 Worker:
 ``` console
 docker exec [CONTAINER ID] celery -A composeexample worker --pool=solo --loglevel=info
