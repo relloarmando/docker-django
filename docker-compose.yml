@@ -12,6 +12,8 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - '5432:5432'
+    healthcheck:
+      test: pg_isready -U postgres
 
   web:
     build: .
@@ -26,7 +28,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     depends_on:
-      - rabbitmq3
+      db:
+        condition: service_healthy
 
   rabbitmq3:
       container_name: "rabbitmq3"
@@ -38,4 +41,4 @@ services:
           # AMQP protocol port
           - '5672:5672'
       depends_on:
-        - db
+        - web
