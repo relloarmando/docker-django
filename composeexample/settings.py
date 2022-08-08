@@ -138,4 +138,4 @@ CELERY_TIMEZONE = "America/Los_Angeles"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672'
-CELERY_RESULT_BACKEND = 'db+postgresql://postgres:postgres@db/postgres'
+CELERY_RESULT_BACKEND = 'db+postgresql+psycopg2://postgres:postgres@localhost/postgres'

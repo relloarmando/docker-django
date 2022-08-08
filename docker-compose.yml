@@ -1,8 +1,9 @@
-version: "3.9"
-   
+version: '3'
+
 services:
   db:
-    image: postgres
+    image: postgres:14.1-alpine
+    restart: always
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
@@ -14,12 +15,12 @@ services:
 
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: ./entry_script.sh
+
     volumes:
       - .:/code
     ports:
       - "8000:8000"
-
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
@@ -28,11 +29,13 @@ services:
       - db
 
   rabbitmq3:
-    container_name: "rabbitmq3"
-    image: rabbitmq:3.10-alpine
-    environment:
-      - RABBITMQ_DEFAULT_USER=guest
-      - RABBITMQ_DEFAULT_PASS=guest
-    ports:
-      # AMQP protocol port
-      - '5672:5672'
+      container_name: "rabbitmq3"
+      image: rabbitmq:3.10-alpine
+      environment:
+          - RABBITMQ_DEFAULT_USER=guest
+          - RABBITMQ_DEFAULT_PASS=guest
+      ports:
+          # AMQP protocol port
+          - '5672:5672'
+      depends_on:
+        - db
