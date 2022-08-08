@@ -26,7 +26,7 @@ app.conf.beat_schedule = {
     'celery_example_tasks_add': {
         'task': 'celery_example.tasks.add',
         'schedule': 5.0,
-        'args': ([2,3])
+        'args': ([2, 3])
     },
 }
 
